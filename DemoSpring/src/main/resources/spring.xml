@@ -1,0 +1,30 @@
+<!--intially no tag has its property , so we should configure to that tag-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id = "dev" class = "io.learn.Dev" autowire="byType">
+        <!--Property tag sets the default value for the property[Method]. It is for setter injection-->
+<!--        <property name="age" value="18"/>-->
+
+        <!--It is constructor injection-->
+
+<!--     <constructor-arg value="20"/>-->
+
+        <!--Setter injection-->
+<!--        here the ref of the laptop is inserting into the Dev-->
+<!--        <property name="laptop" ref="lap1"/>-->
+
+<!--        Constructor Injection-->
+<!--        <constructor-arg ref="lap1"/>-->
+
+<!--        <property name="comp" ref="com"/>-->
+    </bean>
+
+    <bean id="com" class = "io.learn.Laptop" primary="true">
+    </bean>
+
+    <bean id = "com1" class="io.learn.Desktop">
+    </bean>
+</beans>
